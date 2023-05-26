@@ -1,4 +1,5 @@
 import math
+import itertools
 
 
 def getDivisorzSum(num: int) -> int:
@@ -24,26 +25,32 @@ def isAbundant(num: int) -> bool:
         return False
 
 
-abundantNums=[]
-for i in range(28123+1):
-    if isAbundant(i):
-        abundantNums.append(i)
+if __name__=='__main__':
+    LIMIT=28123
+    abundantNums=[]
+    for i in range(12, LIMIT+1):
+        if isAbundant(i):
+            abundantNums.append(i)
+    #del abundantNums[0]
 
-del abundantNums[0]
+    sums=[0]*(LIMIT+1)
+    #print(abundantNums)
 
+    for i in range(len(abundantNums)):
+        for j in range(i, len(abundantNums)):
+            #if (abundantNums[i]+abundantNums[j])>LIMIT: 
+            #    break
+            sumof2abundans=abundantNums[i]+abundantNums[j]
+            if sumof2abundans<=LIMIT and sums[sumof2abundans]==0: 
+                sums[sumof2abundans]=sumof2abundans
 
-sums=[0]*28124
-for i in range(len(abundantNums)):
-    for j in range(i, len(abundantNums)):
-        sumOf2abunds= abundantNums[i]+abundantNums[j]
-        if sumOf2abunds<=28123 and sums[sumOf2abunds]==0:
-            sums[sumOf2abunds]=sumOf2abunds
+    total=0
+    for i in range(1, len(sums)):
+        if sums[i]==0:
+            total+=i
 
-total=0
-for i in range(1, len(sums)):
-    if (sums[i]==0):
-        total+=i
-print(total)
+    #total=sum(itertools.compress(range(1, LIMIT+1), sums))
+    print(total)
 
 
 

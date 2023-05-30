@@ -2,7 +2,6 @@
 
 # Решето Эрстофена
 def func(n):
-
     arr=[1 for _ in range(n)]
 
     arr[0]=0

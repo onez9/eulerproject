@@ -10,7 +10,7 @@ def solution(n: int) -> None:
     y0=0
     acc=0 # счётчик результатов
     res=set() # кортеж с результатами
-    for x1, y1 in itertools.product(range(0, n+1), range(0, n+1)):
+    for x1, y1 in itertools.product(range(0, n+1), repeat=2):
         for x2, y2 in itertools.product(range(0, n+1), range(0, n+1)):
             # for x1 in range(0, n+1):
             #     for y1 in range(0, n+1):
@@ -48,12 +48,12 @@ def solution(n: int) -> None:
 
                 
                 acc+=1
-    return res
+    return len(res)
 
 if __name__=='__main__':
-    for i, item in enumerate(solution(2)):
-        print(i+1, item)
-            
-            # print()
+    # for i, item in enumerate(solution(2)):
+    #     print(i+1, item)
+    print(solution(50))
+    # print()
     # print(len(list(res)))
     # print(len(res)+1)2

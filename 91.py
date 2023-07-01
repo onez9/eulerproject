@@ -36,12 +36,9 @@ def solution(n: int) -> None:
             # если какой-либо из 3 углов прямой то +1 к решению
             if x1_vec*x2_vec + y1_vec*y2_vec==0 or x1_vec*x3_vec + y1_vec*y3_vec==0 or x2_vec*x3_vec + y2_vec*y3_vec==0:
                 # print(acc, ") ", x0, y0, " ", x1, y1, " ", x2, y2)
-                
-                # if x1==y2 and x2==y1:
-                    
+                # if x1==y2 and x2==y1:                    
                 #     res.add((x0,y0,min(x1,y1),max(x1,y1),max(x2,y2),min(x2,y2)))
                 # else:
-
                 # таким образом избавляемся от дубликатов между первой и второй точкой
                 point1=min((x1,y1), (x2,y2))
                 point2=max((x1,y1), (x2,y2))

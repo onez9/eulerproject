@@ -12,11 +12,23 @@ def get_fac(n:int)->None:
 
 def solution(n: int)->None:
     # total=1000
+    result=0
+    t=0
+    # while True:
+        
+        
+    #     t+=1
+
+    
+    # return result
+
+
+
     for total in range(n, 1, -1):
         for blue in range(int(total), 1, -1):
             if blue/(total) * (blue-1)/(total-1) == 0.5:
                 print(f'{blue}: {get_fac(blue)}, {total}: {get_fac(total)}')
-                print(f'{blue-1}: {get_fac(blue-1)}, {total-1}: {get_fac(total-1)}')
+                # print(f'{blue-1}: {get_fac(blue-1)}, {total-1}: {get_fac(total-1)}')
                 # print(blue, total)
                 break
             

@@ -10,3 +10,10 @@ while acc < 1000:
     acc+=1
 
 print(summ)
+
+
+
+
+
+
+

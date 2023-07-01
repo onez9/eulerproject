@@ -9,8 +9,15 @@ def solution1():
                 m=s
     return m
 
+
 def solution2():
     ...
 
+
 if __name__ == '__main__':
+    solution1()
+    print('hello hello')
     ...
+    ...
+    ...
+    print('hello hello world!!!!')

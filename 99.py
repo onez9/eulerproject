@@ -27,11 +27,9 @@ def solution()->int:
     acc=1
     mx=0;number=0;res=result()
     with io.open('p099_base_exp.txt', mode='r') as fi:
-        while True:
-            tx = fi.readline()
+        while tx := fi.readline():
+            # tx = fi.readline()
             
-            if tx=='':
-                break
             x, y = list(map(int, tx.split(',')))
             # print(fac(x), fac(y))
             current = y*math.log(x)
@@ -41,7 +39,8 @@ def solution()->int:
                 
             # if acc==6: break
             acc+=1
-    print(mx)
+
+    # print(mx)
     print(res.x, res.y, res.n)
 
 
